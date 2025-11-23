@@ -11,7 +11,7 @@ body {
 }
 
 /* App layout - centered & spaced */
- .app {
+.app {
   position: relative;
   display: flex;
   justify-content: center;
@@ -38,7 +38,7 @@ body {
   left: 100%;
   margin-left: 20px; 
   top: 120px;
-  
+
   background: #ffffffcc;
   color: #b44577;
   border: none;
@@ -50,7 +50,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.2s ease, background 0.2s ease;
 }
-
 
 .history-toggle:hover {
   background: #ffe4f0;
@@ -108,7 +107,7 @@ body {
   transition: transform 160ms cubic-bezier(.2,.9,.3,1), filter 160ms;
 }
 
-/* zero button spanning two columns */
+/* Zero button spans two columns */
 .flower.zero {
   grid-column: span 2;
   width: 100%;
@@ -157,23 +156,6 @@ body {
 
 .flower.equals .flower-svg path { fill: url(#equalGradient); }
 .flower.equals .label { color: white; }
-
-/* Responsive */
-@media (max-width: 520px) {
-  .calculator { width: 94%; padding: 14px; }
-  .flower { width: 64px; height: 64px; }
-  .label { font-size: 16px; }
-  .result { font-size: 30px; }
-
-  .history-toggle {
-    right: -60px;
-    top: 10px;
-  }
-
-  .history-panel {
-    right: -290px;
-  }
-}
 
 /*HISTORY position*/
 .history-panel {
@@ -226,7 +208,8 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
-/*ACCESSIBILITY*/
+
+/* ACCESSIBILITY */
 .flower:focus,
 .history-toggle:focus,
 .small-btn:focus,
@@ -239,4 +222,64 @@ body {
   outline: 3px solid #ff98c9;
   outline-offset: 4px;
   border-radius: 6px;
+}
+
+
+
+/* --------------------------------------------- */
+/* ⭐ FULL RESPONSIVENESS (NEW + UPDATED)        */
+/* --------------------------------------------- */
+
+@media (max-width: 850px) {
+  .app {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .history-toggle {
+    position: relative;
+    left: 0;
+    margin-left: 0;
+    top: 0;
+    margin-bottom: 10px;
+  }
+
+  .history-panel {
+    position: relative;
+    left: 0;
+    margin-left: 0;
+    top: 0;
+    width: 100%;
+    max-height: 300px;
+  }
+}
+
+/* Slide animation */
+.history-panel {
+  transition:
+    opacity 0.3s ease,
+    transform 0.35s cubic-bezier(.25,.8,.25,1);
+  transform: translateX(0);
+}
+
+.history-panel.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(40px); /* slides out to the right */
+}
+
+@media (max-width: 520px) {
+  .calculator { width: 94%; padding: 14px; }
+  .flower { width: 64px; height: 64px; }
+  .label { font-size: 16px; }
+  .result { font-size: 30px; }
+
+  .app {
+    padding: 20px 10px;
+  }
+
+  .history-panel {
+    width: 100%;
+    max-height: 260px;
+  }
 }
