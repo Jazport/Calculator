@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cherry Blossom Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app">
+    
+    <!-- History button -->
+    <button id="history-toggle" class="history-toggle" aria-label="Toggle history">HX</button>
+
+    <!-- Calculator -->
+    <section class="calculator" role="application" aria-label="Cherry blossom calculator">
+      <div class="screen" aria-live="assertive">
+        <div id="expression" class="expression"></div>
+        <div id="result" class="result">0</div>
+      </div>
+
+      <div class="buttons" id="buttons">
+
+        <button class="flower function" data-action="clear"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">C</span></button>
+        <button class="flower function" data-action="delete"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">DEL</span></button>
+        <button class="flower number" data-value="%"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">%</span></button>
+        <button class="flower operator" data-action="/"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">/</span></button>
+
+        <button class="flower number" data-value="7"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">7</span></button>
+        <button class="flower number" data-value="8"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">8</span></button>
+        <button class="flower number" data-value="9"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">9</span></button>
+        <button class="flower operator" data-action="*"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">×</span></button>
+
+        <button class="flower number" data-value="4"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">4</span></button>
+        <button class="flower number" data-value="5"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">5</span></button>
+        <button class="flower number" data-value="6"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">6</span></button>
+        <button class="flower operator" data-action="-"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">−</span></button>
+
+        <button class="flower number" data-value="1"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">1</span></button>
+        <button class="flower number" data-value="2"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">2</span></button>
+        <button class="flower number" data-value="3"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">3</span></button>
+        <button class="flower operator" data-action="+"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">+</span></button>
+
+        <button class="flower number zero" data-value="0"><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">0</span></button>
+
+        <button class="flower number" data-value="."><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">.</span></button>
+
+        <button class="flower equals" data-action="="><svg viewBox="0 0 100 100" class="flower-svg"><path/></svg><span class="label">=</span></button>
+      </div>
+    </section>
+
+    <!-- History Panel -->
+    <aside id="history-panel" class="history-panel hidden">
+      <div class="history-header">
+        <h3>History</h3>
+        <button id="clear-history" class="small-btn">Clear</button>
+      </div>
+      <div id="history-list" class="history-list"></div>
+    </aside>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
