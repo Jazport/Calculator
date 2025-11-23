@@ -96,12 +96,12 @@ function doOperator(op) {
   updateDisplay();
 }
 
-/* NEW REAL % BEHAVIOR — KEEP % IN DISPLAY */
+/* KEEP % IN DISPLAY */
 
 function applyPercentDisplay() {
   if (!currentNum) return;
 
-  // Just append % (visually) — DO NOT convert
+  // Just append % (visually)
   if (!currentNum.endsWith("%")) {
     currentNum += "%";
   }

@@ -226,7 +226,7 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
-/* === ACCESSIBILITY: FOCUS OUTLINES (WCAG 2.0 AA) === */
+/*ACCESSIBILITY*/
 .flower:focus,
 .history-toggle:focus,
 .small-btn:focus,
