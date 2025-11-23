@@ -226,9 +226,9 @@ body {
 
 
 
-/* --------------------------------------------- */
-/* ⭐ FULL RESPONSIVENESS (NEW + UPDATED)        */
-/* --------------------------------------------- */
+
+/* RESPONSIVENESS */
+
 
 @media (max-width: 850px) {
   .app {
@@ -265,7 +265,7 @@ body {
 .history-panel.hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateX(40px); /* slides out to the right */
+  transform: translateX(40px);
 }
 
 @media (max-width: 520px) {
